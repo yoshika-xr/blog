@@ -1,0 +1,25 @@
+<%- include("partials/header.ejs") %>
+
+<div class="create-form-container">
+    <form class="create-form" action="/updateBlog" method="POST">
+        <label for="author">Author Name</label>
+        <input type="text" name="author" id="author" value=<%=blog.author%> required>
+
+        <label for="date">Publishing Date</label>
+        <input type="date" name="date" id="date" value=<%=blog.date %> required>
+
+        <label for="title">Blog Title</label>
+        <input type="text" name="title" id="title" value=<%=blog.title%> required>
+
+        <label for="subTitle">Blog Subtitle</label>
+        <input type="text" name="subTitle" id="subTitle" value=<%=blog.subTitle%> required>
+
+        <label for="content">Blog Content</label>
+        <textarea id="editor" name="content" ><%=blog.content%></textarea>
+
+        <button class="btn btn-primary" type="submit">Add Blog</button>
+    </form>
+</div>
+
+<%- include('partials/footer.ejs') %>
+

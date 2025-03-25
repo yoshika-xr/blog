@@ -1,0 +1,133 @@
+/* create form section */
+.create-form-container{
+    margin:0;
+    padding:0;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:0 0 20px black;
+    box-sizing: border-box;
+    animation: fadeIn 1s ease-in-out;
+}
+.create-form{
+    margin:0;
+    padding:5px;
+    margin-top:20px;
+    padding:10px; 
+    animation: slideIn 0.8s ease-out;
+}
+input{
+    padding:10px;
+   display: block;
+   width:50vw;
+   border-radius:5px;
+}
+label{
+    font-weight:bold;
+}
+.btn-primary{
+ width: 100%;
+  background: #2d3132;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: all 0.3s;
+  margin-top:10px;
+  font-weight: 700;
+ box-shadow:4px 4px 15px rgb(49, 51, 52);
+}
+.btn-primary:hover{
+    color:rgb(14, 24, 27);
+    background-color: rgba(207, 210, 212, 0.573);
+    box-shadow: 0 0 5px rgb(36, 40, 41),
+    0 0 10px rgb(44, 47, 48),
+    0 0 25px rgb(64, 66, 68),
+    0 0 50px rgb(44, 53, 55),
+    0 0 75px rgb(27, 40, 40);
+    transform:all 5s;
+}
+/* the blog button */
+.blogbutton{
+    display:flex;
+    gap:20px;
+}
+.update-btn{
+    border: none;
+    background: none;
+    padding:0;
+}
+.delete-btn{
+    border: none;
+    background: none;
+    padding:0;
+}
+
+button svg {
+    margin-right: 8px; 
+    vertical-align: middle; 
+}
+/* blog show */
+.blog-container{
+    margin-top:15px;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-in-out;
+    flex-grow: 1;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 15px rgba(32, 28, 25, 0.415);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.blog-container:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+ 
+/* Default state */
+.nav-link {
+    padding: 10px 15px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Active or focused state */
+.nav-link:focus,
+.nav-link:active {
+    outline: 2px solid black;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: lightgray; 
+}
+
+/* If using Bootstrap's active class */
+.nav-link.active {
+    outline: 2px solid black;
+    background-color: lightgray;
+    border-radius: 5px;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+

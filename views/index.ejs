@@ -1,0 +1,40 @@
+<%- include("partials/header.ejs") %>
+<div class="blog-container">
+<% if (blogs && blogs.length > 0) { %>
+    <% blogs.forEach(blog => { %>
+        <div class="blog-post">
+            <h1><%= blog.title %></h1>
+            <h3><%= blog.subtitle %></h3>
+            <p><strong>Author:</strong> <%= blog.author %></p>
+            <p><strong>Date:</strong> <%= blog.date %></p>
+            <p><%- blog.content %></p>
+            <div class="blogbutton">
+                <form action="readBlog" method="get">
+                    <input value=<%=blog.id %> name="id" type="hidden">
+                    <button class="update-btn btn-outline-none" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-book-half" viewBox="0 0 16 16">
+                        <path d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
+                      </svg></button>
+                </form>
+            <form action="updateBlog" method="get">
+                <input value=<%=blog.id %> name="id" type="hidden">
+                <button class="update-btn btn-outline-none" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="green" class="bi bi-arrow-left-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5"/>
+                  </svg></button>
+            </form>
+            <form action="deleteBlog" method="get">
+                <input value=<%=blog.id %> name="id" type="hidden">
+                <button class="delete-btn btn-outline-none" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="red" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                    <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
+                  </svg></button>
+            </form>
+            <hr>
+        </div>
+        </div>
+    <% }) %>
+<% } else { %>
+    <div class="home-blog">
+    <p>No blogs found.</p>
+</div>
+<% } %>
+</div>
+<%- include("partials/footer.ejs") %>
