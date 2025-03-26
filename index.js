@@ -69,7 +69,7 @@ app.post("/updateBlog",(req,res)=>{
     var updatedBlogauthor=req.body.author
     var updatedBlogdate=req.body.date
     var updatedBlogtitle=req.body.title
-    var updatedBlogsubtitle=req.body.subtitle
+    var updatedBlogsubtitle=req.body.subTitle
     var updatedBlogcontent=req.body.content
     const blog = blogs.find(b => b.id == targetId);
     blog.author=updatedBlogauthor

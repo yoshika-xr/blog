@@ -7,7 +7,6 @@
             <h3><%= blog.subtitle %></h3>
             <p><strong>Author:</strong> <%= blog.author %></p>
             <p><strong>Date:</strong> <%= blog.date %></p>
-            <p><%- blog.content %></p>
             <div class="blogbutton">
                 <form action="readBlog" method="get">
                     <input value=<%=blog.id %> name="id" type="hidden">
